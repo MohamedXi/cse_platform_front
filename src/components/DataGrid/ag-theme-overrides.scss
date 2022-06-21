@@ -1,0 +1,51 @@
+.ag-theme-alpine {
+  .ag-header {
+  }
+  .ag-row {
+    &.rental-list-row {
+      &:hover {
+        background: none;
+
+        &::before {
+          box-shadow: 0 3px 6px var(--color-primary-light);
+        }
+      }
+      &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        // inset the element on Y to fake spaced rows.
+        top: 10px;
+        // inset the element on X for shadow to display
+        left: 4px;
+        width: calc(100% - 8px);
+        height: calc(100% - 20px);
+        background: white;
+        box-shadow: 0 3px 6px #0000000d;
+        border-radius: 15px;
+      }
+
+      // Adjust selection to fake container
+      .ag-cell.ag-cell-focus {
+        &::before {
+          content: '';
+          display: block;
+          position: absolute;
+          // inset the element on Y to fake spaced rows.
+          top: 8px;
+          // inset the element on X for shadow to display
+          left: 0;
+          width: 100%;
+          height: calc(100% - 16px);
+          border: 1px solid var(--color-primary);
+        }
+        border-color: transparent;
+      }
+    }
+
+    .ag-cell {
+    }
+  }
+  .ag-react-container {
+  }
+}

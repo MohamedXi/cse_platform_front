@@ -1,0 +1,285 @@
+@import '../../styles/colors.scss';
+
+.booking-calendars__container {
+  display: flex;
+  flex-direction: row;
+  padding: 16px 22px;
+  background-color: #f4f4ff;
+  gap: 31px;
+  margin: auto;
+  width: fit-content;
+  max-width: 433px;
+  position: relative;
+  margin-bottom: 34px;
+  margin-top: 20px;
+
+  * {
+    font-family: 'Calibri';
+  }
+
+  .booking-calendars__loading {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+  }
+
+  .booking-calendar__container {
+    .booking-calendar__warning {
+      font-size: 12px;
+      color: $error;
+    }
+    .booking-calendar-choseDay {
+      font-size: 12px;
+    }
+
+    .booking-calendar {
+      width: 100%;
+      border: none;
+      background-color: transparent;
+
+      // NAVIGATION
+      .react-calendar__navigation {
+        align-items: center;
+        margin-bottom: 0;
+
+        .react-calendar__navigation__prev2-button,
+        .react-calendar__navigation__next2-button {
+          display: none;
+        }
+
+        &__arrow {
+          width: 21px;
+          height: 21px;
+          background-color: $primary;
+          border-radius: 50%;
+          color: white;
+          font-weight: 600;
+          opacity: 0.6;
+          display: flex;
+          justify-content: center;
+        }
+
+        button {
+          min-width: auto;
+        }
+
+        .react-calendar__navigation__label {
+          background-color: transparent;
+
+          &__labelText {
+            font-size: 12px;
+            color: $body;
+            text-transform: capitalize;
+          }
+        }
+      }
+      // NAVIGATION
+
+      // WEEKDAYS
+      .react-calendar__month-view__weekdays__weekday {
+        font-size: 10px;
+        color: #737373;
+        width: 25px;
+        padding: 0;
+        margin: 0 0 10px 0;
+        text-transform: capitalize;
+
+        abbr {
+          text-decoration: none;
+        }
+      }
+      // WEEKDAYS
+
+      //TILES
+      .react-calendar__tile {
+        padding: 0;
+        margin-bottom: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 11px;
+        color: $body;
+        width: 25px;
+        transition: background-color 0.3 ease-in-out;
+
+        &:hover {
+          background-color: transparent;
+        }
+
+        abbr {
+          width: 21px;
+          height: 21px;
+          padding: 0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 50%;
+          transition: all 0.3 ease-in-out;
+
+          &:hover {
+            background-color: $primary;
+            color: white;
+          }
+        }
+
+        &:disabled {
+          background-color: transparent;
+
+          abbr {
+            opacity: 0.4;
+            &:hover {
+              background-color: transparent;
+              cursor: not-allowed;
+            }
+          }
+        }
+
+        &.isAlreadyBooked {
+          background-color: lightgrey;
+
+          abbr {
+            background-color: transparent;
+            opacity: 1;
+            color: white;
+          }
+
+          &.isFirstDayAlreadyBooked {
+            background: radial-gradient(circle at 100%, lightgrey, lightgrey 0%, lightgrey 65%, transparent 0%);
+
+            abbr {
+              background-color: #c7c2c2;
+              color: white;
+            }
+
+            // &.bookingRentalBetweenDates {
+            //   background: $error !important;
+            // }
+          }
+
+          &.isLastDayAlreadyBooked {
+            background: radial-gradient(circle at 0%, lightgrey, lightgrey 0%, lightgrey 65%, transparent 0%);
+
+            abbr {
+              background-color: #c7c2c2;
+              color: white;
+            }
+            // &.bookingRentalBetweenDates {
+            //   background: $error !important;
+            // }
+          }
+          &.isFirstDayAlreadyBooked.isLastDayAlreadyBooked {
+            background: transparent;
+          }
+          // &.isFirstDayAlreadyBooked.isLastDayAlreadyBooked.bookingRentalBetweenDates {
+          //   background: $error !important;
+          // }
+        }
+
+        &--range {
+          background-color: $primary-light;
+
+          &:hover {
+            background-color: $primary-light;
+            color: white;
+          }
+
+          abbr {
+            background-color: transparent;
+          }
+
+          &:disabled {
+            background-color: $primary-light;
+          }
+
+          &.bookingTooLong {
+            background-color: $error !important;
+
+            abbr {
+              background-color: red !important;
+              color: white !important;
+            }
+          }
+
+          &.oneDayOnly {
+            background-color: transparent;
+          }
+          &.bookingRentalBetweenDates {
+            background: $error !important;
+            color: white !important;
+          }
+        }
+
+        &--rangeStart,
+        &--rangeEnd {
+          background-color: transparent;
+
+          abbr {
+            background-color: $primary;
+            color: white;
+          }
+
+          &.bookingTooLong,
+          &.bookingRentalBetweenDates {
+            background-color: transparent !important;
+
+            abbr {
+              background-color: red !important;
+              color: white !important;
+            }
+          }
+
+          &.react-calendar__month-view__days__day--neighboringMonth,
+          &.oneDayOnly {
+            background: radial-gradient(circle at 0%, transparent, transparent 0%, transparent 65%, transparent 0%);
+          }
+        }
+
+        &--rangeStart {
+          background: radial-gradient(
+            circle at 100%,
+            $primary-light,
+            $primary-light 0%,
+            $primary-light 65%,
+            transparent 0%
+          );
+
+          &.bookingTooLong,
+          &.bookingRentalBetweenDates {
+            background: radial-gradient(circle at 100%, $error, $error 0%, $error 65%, transparent 0%) !important;
+          }
+        }
+
+        &--rangeEnd {
+          background: radial-gradient(
+            circle at 0%,
+            $primary-light,
+            $primary-light 0%,
+            $primary-light 65%,
+            transparent 0%
+          );
+
+          &.bookingTooLong,
+          &.bookingRentalBetweenDates {
+            background: radial-gradient(circle at 0%, $error, $error 0%, $error 65%, transparent 0%) !important;
+          }
+        }
+
+        &--now {
+          background-color: transparent;
+        }
+      }
+
+      .react-calendar__month-view__days__day--neighboringMonth {
+        background: none !important;
+        background-color: transparent !important;
+
+        abbr {
+          display: none !important;
+        }
+      }
+      //TILES
+    }
+  }
+}

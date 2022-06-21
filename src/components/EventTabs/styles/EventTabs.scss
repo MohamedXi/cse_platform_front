@@ -1,0 +1,53 @@
+@import '../../../styles/colors.scss';
+
+.event-tab {
+  margin-top: 4px;
+  .header-tab {
+    min-height: 100%;
+    .MuiButtonBase-root {
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px;
+      color: $primary;
+      font-size: 12px;
+      min-width: 75px;
+      min-height: 24px;
+      padding: 5px 16px 3px;
+      span {
+        line-height: 1.35;
+      }
+    }
+    .Mui-selected {
+      background: white;
+      box-shadow: 0px 3px 6px #0000000d;
+    }
+  }
+  .tab-content {
+    background: white;
+    box-shadow: 0px 3px 6px #0000000d;
+    min-height: 40px;
+    padding: 10px 16px 10px 10px;
+    .line-item {
+      .icon-cards {
+        background: $light-gradient;
+        height: 21px;
+        width: 21px;
+        svg {
+          height: 70%;
+          width: 70%;
+        }
+      }
+      .name {
+        line-height: 1.5;
+        width: 35%;
+      }
+      button {
+        font-size: 10px;
+        line-height: 1;
+      }
+    }
+  }
+  .tab-content-message {
+    min-height: 40px;
+    padding: 10px 16px 10px 10px;
+  }
+}

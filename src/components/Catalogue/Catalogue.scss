@@ -1,0 +1,62 @@
+@import '../../styles/colors.scss';
+
+.carousel__container:nth-child(even) {
+  
+  .slick-disabled {
+    svg {
+      color: white !important;
+      cursor:default;
+    }
+  }
+  .carousel__background {
+    background-color: rgba(196, 195, 252, 0.25);
+    padding-left: 40px;
+    margin-left: -40px;
+    padding-right: 40px;
+    margin-right: -40px;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    height: 100%;
+    height: 100%;
+    z-index: -1;
+    box-shadow: 0px 2px 6px 3px rgba(0, 0, 0, 0.09);
+    &.slick-arrow {
+      color: white;
+    }
+   
+  }
+}
+
+.carousel__container {
+  position: relative;
+
+  padding-bottom: 15px;
+  padding-top: 15px;
+  margin-bottom: 15px;
+
+  h1 {
+    color: $body;
+    margin: 0;
+    padding: 0;
+    font-size: 12px;
+    width: fit-content;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  .slick-arrow {
+    &.slick-next {
+      right: -8px;
+    }
+    &::before {
+      content: '';
+    }
+    &.slick-disabled {
+      svg {
+        cursor: default;
+      }
+    }
+  }
+}

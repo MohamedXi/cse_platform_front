@@ -1,0 +1,50 @@
+@import '../../../styles/colors.scss';
+
+.newRentals {
+  .icon-cards {
+    background: $light-gradient;
+  }
+
+  .MuiCardContent-root {
+    margin-left: 0;
+  }
+  .button-container {
+    width: 78%;
+    button {
+      padding: 2px 11px;
+      .MuiButton-label {
+        text-transform: none;
+        font-weight: 400;
+        font-size: 0.8em;
+      }
+      &:first-of-type {
+        margin-right: 10px;
+      }
+    }
+    .containerReserve {
+      button {
+        margin-right: 0;
+      }
+    }
+  }
+
+  //Carrousel
+  .slick-arrow {
+    svg {
+      top: 0;
+    }
+    &::before {
+      display: none;
+    }
+  }
+  .slick-prev,
+  .slick-next {
+    top: 45%;
+  }
+  .slick-next {
+    right: -20px;
+  }
+  .slick-slider {
+    margin-left: 30px;
+  }
+}

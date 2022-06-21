@@ -1,0 +1,46 @@
+@import '../../../styles/colors.scss';
+
+.tagsListItem {
+  background-color: white;
+  border-radius: 15px;
+  padding: 7px 15px;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 20px;
+  box-shadow: 0 3px 6px #0000000d;
+  position: relative;
+  height: 25px;
+
+  &__name {
+    width: 30%;
+    color: $primary;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+  }
+
+  &__prices {
+    width: 40%;
+    display: flex;
+    flex-direction: row;
+
+    &__deposit,
+    &__rent {
+      width: 50%;
+    }
+  }
+
+  &__icons {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+
+    &__delete,
+    &__edit {
+      width: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}

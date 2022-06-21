@@ -1,0 +1,24 @@
+@import '../../styles/colors.scss';
+@import '../../styles/mixins.scss';
+
+.item-card__container {
+  width: calc(25% - 16px);
+  margin-right: 8px;
+  margin-left: 8px;
+
+  @include smaller-desktop {
+    width: calc(33% - 16px);
+  }
+}
+
+.carousel__item {
+  width: calc(100% - 16px);
+}
+
+.divider__container {
+  opacity: 0.4;
+}
+
+.icon-bg {
+  background: $light-gradient;
+}

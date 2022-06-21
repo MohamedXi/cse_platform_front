@@ -1,0 +1,60 @@
+@import '../../../styles/colors.scss';
+
+.tagsList {
+  background: rgba(196, 195, 252, 0.3);
+  border-radius: 15px;
+  padding: 30px;
+  width: 33%;
+  margin: 0 20px;
+  box-shadow: 0 3px 6px #0000000d;
+
+  &--header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 20px;
+
+    h2 {
+      margin: 0;
+      font-weight: 400;
+    }
+  }
+
+  &--list {
+    display: flex;
+    flex-direction: column;
+
+    &__labels {
+      display: flex;
+      flex-direction: row;
+      margin-bottom: 10px;
+
+      * {
+        text-transform: uppercase;
+      }
+
+      &__name {
+        width: 30%;
+      }
+
+      &__prices {
+        display: flex;
+        flex-direction: row;
+        width: 40%;
+
+        &__deposit,
+        &__rent {
+          width: 50%;
+        }
+      }
+
+      &__icons {
+        width: 10%;
+      }
+    }
+  }
+}
+
+.tagsList__categories {
+  width: 66%;
+}

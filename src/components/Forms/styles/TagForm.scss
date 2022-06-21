@@ -1,0 +1,16 @@
+.form-Tag {
+  .MuiFormControl-root {
+    margin-top: 0;
+    margin-bottom: 35px;
+    input {
+      padding: 8px;
+    }
+    .MuiInputLabel-root {
+      top: -7px;
+      &.MuiFormLabel-filled,
+      &.Mui-focused {
+        top: 0;
+      }
+    }
+  }
+}

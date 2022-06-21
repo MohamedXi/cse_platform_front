@@ -1,0 +1,18 @@
+@import 'colors';
+
+:root {
+  /**
+  This notation is to provide compatibility with tailwind config
+  and make those colors available for utilities. Bang!
+   */
+  --color-primary: #{$primary};
+  --color-primary-light: #{$primary-light};
+  --color-primary-light-bg: #{$primary-light-bg};
+  --color-secondary: #{$secondary};
+  --color-light-grey: #{$light-grey};
+  --color-dark-grey: #{$dark-grey};
+  --color-body: #{$body};
+  --color-success: #{$success};
+  --color-error: #{$error};
+  --color-warning: #{$warning};
+}

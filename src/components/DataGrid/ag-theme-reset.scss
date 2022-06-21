@@ -1,0 +1,51 @@
+@import '~ag-grid-community/src/styles/ag-grid.scss';
+@import '~ag-grid-community/src/styles/ag-theme-alpine/sass/ag-theme-alpine-mixin';
+
+.ag-theme-alpine {
+  @include ag-theme-alpine(
+    (
+           // use theme parameters wher
+      borders: false,
+      background-color: transparent,
+      header-background-color: transparent,
+      data-color: var(--color-body)
+    )
+  );
+  font-family: Nunito Sans, Roboto, monospace;
+  color: var(--color-body);
+
+  .ag-header {
+    .ag-header-cell-label {
+      justify-content: center;
+    }
+
+    .ag-header-cell {
+      font-weight: normal;
+    }
+  }
+
+  .ag-filter-wrapper {
+    background-color: var(--color-primary-light-bg);
+  }
+
+  .ag-row {
+    //background-color: white;
+
+    .ag-cell {
+      font-size: 0.875rem;
+      line-height: 1rem;
+      font-weight: normal;
+      color: var(--color-body);
+      padding: 0.2rem;
+    }
+  }
+
+  .ag-react-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+    overflow: hidden;
+    padding: 0 8px;
+  }
+}

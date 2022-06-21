@@ -1,0 +1,66 @@
+@import '../../../styles/colors.scss';
+
+.calendar-container {
+  position: relative;
+  display: block;
+  &::before,
+  &::after {
+    content: '';
+    background: $primary-light-bg;
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 40px;
+  }
+  &::before {
+    left: -40px;
+  }
+  &::after {
+    right: -40px;
+  }
+  .arrow-icon {
+    cursor: pointer;
+    .icon {
+      color: $primary-light;
+      width: 16px;
+      height: 16px;
+      top: 4px;
+      position: relative;
+    }
+  }
+  .arrow-back {
+    .icon {
+      left: 4px;
+    }
+  }
+  .isToday {
+    background: $light-gradient;
+    span {
+      opacity: 1;
+    }
+  }
+  .card-day {
+    box-shadow: 0px 3px 6px #0000000d;
+    min-width: 48px;
+    min-height: 80px;
+    width: 100%;
+    &:nth-of-type(5) {
+      position: relative;
+      &::after {
+        content: '';
+        position: absolute;
+        width: 1px;
+        height: 40%;
+        right: -12px;
+        background: $primary-light;
+        opacity: 0.85;
+      }
+    }
+    &:nth-of-type(6) {
+      margin-left: 10px;
+    }
+    &:last-of-type {
+      margin-right: 0;
+    }
+  }
+}

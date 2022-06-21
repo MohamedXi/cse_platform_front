@@ -1,0 +1,20 @@
+.item-type-collection {
+  .input {
+    width: 17rem;
+  }
+  .MuiFormControl-root {
+    margin-top: 5;
+    margin-bottom: 35px;
+    input {
+      padding: 8px;
+      max-width: 90px;
+    }
+    .MuiInputLabel-root {
+      // top: -7px;
+      &.MuiFormLabel-filled,
+      &.Mui-focused {
+        top: 0;
+      }
+    }
+  }
+}

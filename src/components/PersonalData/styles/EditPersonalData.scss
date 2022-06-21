@@ -1,0 +1,26 @@
+@import './../../../styles/colors.scss';
+
+.editData {
+  .MuiTextField-root {
+    input {
+      padding-top: 8px;
+      padding-bottom: 8px;
+    }
+    #email-label,
+    #tel-label {
+      line-height: 0.85em;
+      top: -3px;
+      &.MuiInputLabel-shrink {
+        line-height: 1.5em;
+        top: 0;
+      }
+    }
+    &:last-of-type {
+      margin-top: 15px;
+    }
+    .MuiSvgIcon-root {
+      color: $body;
+      opacity: 0.3;
+    }
+  }
+}
