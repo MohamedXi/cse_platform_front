@@ -6,8 +6,10 @@ WORKDIR /app
 
 # Cache and Install dependencies
 COPY package.json .
-COPY yarn.lock .
-COPY package-lock.json .
+
+## Check if file exist
+COPY *yarn.lock .
+COPY *package-lock.json  .
 
 RUN yarn install
 
